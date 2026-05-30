@@ -1,0 +1,151 @@
+# Learning Summary
+
+## Overview
+
+This project provided practical experience in Security Operations Center (SOC) workflows, threat detection, vulnerability management, and incident investigation using open-source security tools.
+
+The focus was on understanding how attackers operate and how defenders can detect and respond to suspiciouas activity.
+
+---
+
+# Technical Skills Acquired
+
+## 1. SIEM Deployment
+
+Learned how to deploy and configure Wazuh SIEM.
+
+Topics Covered:
+
+* Log collection
+* Alert generation
+* Agent management
+* Security monitoring
+* Event analysis
+
+---
+
+## 2. Endpoint Monitoring
+
+Learned how endpoint visibility improves threat detection.
+
+Topics Covered:
+
+* Sysmon deployment
+* Process monitoring
+* Command-line logging
+* PowerShell monitoring
+* Event forwarding
+
+---
+
+## 3. Network Reconnaissance Detection
+
+Learned how attackers gather information before exploitation.
+
+Topics Covered:
+
+* Port scanning
+* Service discovery
+* Network enumeration
+* Detection techniques
+
+Tools Used:
+
+* Nmap
+* Wazuh
+
+---
+
+## 4. Threat Detection
+
+Learned how SIEM platforms identify suspicious behavior.
+
+Topics Covered:
+
+* Alert investigation
+* Rule matching
+* Event correlation
+* Security monitoring
+
+---
+
+## 5. File Integrity Monitoring
+
+Learned how security teams detect unauthorized file modifications.
+
+Topics Covered:
+
+* File creation monitoring
+* File modification monitoring
+* Integrity validation
+
+---
+
+## 6. Vulnerability Assessment
+
+Learned how vulnerabilities are identified and prioritized.
+
+Topics Covered:
+
+* Vulnerability scanning
+* Risk analysis
+* CVSS scoring
+* Remediation planning
+
+Tool Used:
+
+* OpenVAS
+
+---
+
+## 7. Incident Investigation
+
+Learned how analysts investigate alerts.
+
+Investigation Process:
+
+* Alert review
+* Event analysis
+* Log correlation
+* Root cause identification
+
+---
+
+## 8. MITRE ATT&CK Framework
+
+Learned how attacker behavior can be classified using MITRE ATT&CK.
+
+Benefits:
+
+* Standardized threat mapping
+* Better investigation workflows
+* Improved threat understanding
+
+---
+
+# Soft Skills Developed
+
+* Problem Solving
+* Troubleshooting
+* Documentation
+* Analytical Thinking
+* Security Reporting
+
+---
+
+# Key Takeaways
+
+The project demonstrated that:
+
+* Monitoring is as important as prevention.
+* Most attacker activities generate detectable logs.
+* Endpoint visibility improves investigations.
+* Vulnerability management reduces attack surface.
+* Documentation is critical during incident response.
+* Centralized logging simplifies investigations.
+
+---
+
+# Conclusion
+
+This project strengthened practical understanding of SOC operations, threat detection, vulnerability assessment, and incident response workflows. It provided hands-on experience with tools and methodologies commonly used in enterprise security environments.
