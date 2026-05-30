@@ -1,0 +1,154 @@
+# MITRE ATT&CK Mapping Notes
+
+## Overview
+
+MITRE ATT&CK is a knowledge base of adversary tactics and techniques based on real-world observations.
+
+It helps security teams:
+
+* Understand attacker behavior
+* Classify threats
+* Improve detection capabilities
+* Standardize investigations
+
+---
+
+# Activities Performed During Project
+
+The simulated activities were mapped to relevant MITRE ATT&CK techniques.
+
+---
+
+## Network Reconnaissance
+
+### Activity
+
+Nmap Port Scanning
+
+### Command
+
+```bash
+nmap -sS -A <TARGET-IP>
+```
+
+### MITRE Mapping
+
+| Technique ID | Technique Name           |
+| ------------ | ------------------------ |
+| T1046        | Network Service Scanning |
+
+### Why It Matches
+
+The attacker attempts to identify available services and open ports before exploitation.
+
+---
+
+## Authentication Failure Simulation
+
+### Activity
+
+Multiple failed login attempts.
+
+### MITRE Mapping
+
+| Technique ID | Technique Name |
+| ------------ | -------------- |
+| T1110        | Brute Force    |
+
+### Why It Matches
+
+Repeated authentication attempts are commonly associated with password guessing attacks.
+
+---
+
+## PowerShell Execution
+
+### Activity
+
+Executed PowerShell commands.
+
+### Commands
+
+```powershell
+powershell -ep bypass
+whoami
+ipconfig
+net user
+```
+
+### MITRE Mapping
+
+| Technique ID | Technique Name |
+| ------------ | -------------- |
+| T1059.001    | PowerShell     |
+
+### Why It Matches
+
+PowerShell is frequently used for execution, enumeration, and automation during attacks.
+
+---
+
+## Scheduled Task Creation
+
+### Activity
+
+Persistence simulation.
+
+### Command
+
+```powershell
+schtasks /create /sc onlogon /tn "Updater" /tr "cmd.exe"
+```
+
+### MITRE Mapping
+
+| Technique ID | Technique Name |
+| ------------ | -------------- |
+| T1053.005    | Scheduled Task |
+
+### Why It Matches
+
+Scheduled tasks can provide persistence across system restarts.
+
+---
+
+## File Modification Activity
+
+### Activity
+
+Created and modified files.
+
+### Commands
+
+```bash
+touch ~/testfile
+echo "malwaretest" >> ~/testfile
+```
+
+### MITRE Mapping
+
+| Technique ID | Technique Name                               |
+| ------------ | -------------------------------------------- |
+| T1070        | Indicator Removal on Host (Related Activity) |
+
+### Why It Matches
+
+File modifications often occur during malware deployment, persistence, or attacker activity.
+
+---
+
+# Benefits of MITRE ATT&CK
+
+Using MITRE ATT&CK provides:
+
+* Common terminology
+* Standardized reporting
+* Better threat analysis
+* Improved detection engineering
+* Easier communication between teams
+
+---
+
+# Conclusion
+
+Mapping simulated attacks to MITRE ATT&CK techniques improved understanding of attacker behavior and demonstrated how security teams categorize, investigate, and respond to suspicious activities using industry-recognized frameworks.
