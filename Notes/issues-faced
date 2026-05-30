@@ -1,0 +1,138 @@
+# Issues Faced During Project Execution
+
+## 1. Virtual Machine Networking Issues
+
+### Problem
+
+Initially, communication between virtual machines was not working correctly. The Kali Linux machine was unable to reach the Windows machine and the SIEM server.
+
+### Root Cause
+
+Incorrect VirtualBox network adapter configuration.
+
+### Resolution
+
+* Verified VirtualBox network settings.
+* Configured all virtual machines to use Host-Only Adapter.
+* Assigned valid IP addresses.
+* Tested connectivity using ping.
+
+### Lesson Learned
+
+Always verify network communication before installing monitoring tools.
+
+---
+
+## 2. Wazuh Agent Registration Issues
+
+### Problem
+
+The Kali Linux agent was not appearing in the Wazuh dashboard.
+
+### Root Cause
+
+Incorrect Wazuh Manager IP address and agent service issues.
+
+### Resolution
+
+* Verified manager IP configuration.
+* Restarted Wazuh agent service.
+* Checked agent status using systemctl.
+
+### Lesson Learned
+
+Agent communication should be verified immediately after installation.
+
+---
+
+## 3. Wazuh Dashboard Access Warning
+
+### Problem
+
+Browser displayed SSL certificate warnings when accessing the Wazuh dashboard.
+
+### Root Cause
+
+Wazuh uses self-signed certificates by default.
+
+### Resolution
+
+* Accepted the certificate warning.
+* Continued access through HTTPS.
+
+### Lesson Learned
+
+Self-signed certificates are common in lab environments but should be replaced in production environments.
+
+---
+
+## 4. Sysmon Log Visibility Issues
+
+### Problem
+
+Sysmon logs were not visible inside Wazuh after installation.
+
+### Root Cause
+
+Sysmon event channel was not configured in ossec.conf.
+
+### Resolution
+
+Added:
+
+```xml
+<localfile>
+  <location>Microsoft-Windows-Sysmon/Operational</location>
+  <log_format>eventchannel</log_format>
+</localfile>
+```
+
+Restarted the Wazuh agent.
+
+### Lesson Learned
+
+Proper log forwarding configuration is required for centralized monitoring.
+
+---
+
+## 5. OpenVAS Scan Delays
+
+### Problem
+
+Vulnerability scans required significant time to complete.
+
+### Root Cause
+
+Limited virtual machine resources and comprehensive scan profile.
+
+### Resolution
+
+* Allowed scans to complete without interruption.
+* Allocated additional RAM where possible.
+
+### Lesson Learned
+
+Vulnerability scans can be resource intensive and require planning.
+
+---
+
+## 6. Resource Constraints
+
+### Problem
+
+Running multiple virtual machines simultaneously increased CPU and RAM usage.
+
+### Resolution
+
+* Closed unnecessary applications.
+* Optimized VM resource allocation.
+
+### Lesson Learned
+
+Proper hardware planning is important when building cybersecurity labs.
+
+---
+
+# Summary
+
+Despite multiple technical challenges, all issues were successfully resolved through troubleshooting, log analysis, and configuration adjustments. The experience improved practical understanding of deployment, monitoring, and infrastructure management.
